@@ -8,7 +8,9 @@ https://tryhackme.com/room/uploadvulns的Task 7
 
 打开网页如下：
 
-![image-20220516095801615](C:\Users\m5291\Desktop\归档系统\技术-笔记\wp\attachments\image-20220516095801615.png)
+![image-20220516095801615](2022-05-16-file upload wp.assets/image-20220516095801615.png)
+
+
 
 因为是client-side的过滤故查看源代码，发现非png类型文件不可上传
 
