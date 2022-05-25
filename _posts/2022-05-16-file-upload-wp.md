@@ -1,9 +1,10 @@
 ---
-
+author: lemonxym
 toc: true
 toc_label: "目录"
+toc_icon: "cog"
 ---
-# 0516文件上传绕过（client-side）
+# 文件上传绕过（client-side）
 
 https://tryhackme.com/room/uploadvulns的Task 7
 
@@ -96,7 +97,7 @@ nc -lvnp 1234(端口号)
 
 
 
-# 0516文件上传绕过（server-side）-文件拓展名过滤
+# 文件上传绕过（server-side）-文件拓展名过滤
 
 https://tryhackme.com/room/uploadvulns的Task 8
 
@@ -104,7 +105,7 @@ https://tryhackme.com/room/uploadvulns的Task 8
 
 ![image-20220516152831391]({{ site.url }}{{ site.baseurl }}/assets/images/2022-05-16-file-upload-wp/image-20220516152831391.png)
 
-# 0516文件上传绕过（server-side）-magic numbers过滤
+# 文件上传绕过（server-side）-magic numbers过滤
 
 https://tryhackme.com/room/uploadvulns的Task 9
 
