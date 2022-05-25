@@ -1,3 +1,5 @@
+
+
 # 0516文件上传绕过（client-side）
 
 https://tryhackme.com/room/uploadvulns的Task 7
@@ -8,9 +10,7 @@ https://tryhackme.com/room/uploadvulns的Task 7
 
 打开网页如下：
 
-![image-center]({{ site.url }}{{ site.baseurl }}/assets/images/image-20220516095801615.png)
-
-![image-20220516095801615](C:\Users\m5291\Documents\GitHub\myblog\assets\images\image-20220516095801615.png)
+![image]({{ site.url }}{{ site.baseurl }}/assets/images/image-20220516095801615.png)
 
 
 
