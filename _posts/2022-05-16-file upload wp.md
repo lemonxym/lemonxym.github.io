@@ -8,7 +8,9 @@ https://tryhackme.com/room/uploadvulns的Task 7
 
 打开网页如下：
 
-![image-20220516095801615](2022-05-16-file upload wp.assets/image-20220516095801615.png)
+![image-center]({{ site.url }}{{ site.baseurl }}/assets/images/image-20220516095801615.png)
+
+![image-20220516095801615](C:\Users\m5291\Documents\GitHub\myblog\assets\images\image-20220516095801615.png)
 
 
 
