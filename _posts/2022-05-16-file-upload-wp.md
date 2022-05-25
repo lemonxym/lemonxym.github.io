@@ -1,5 +1,8 @@
+---
 
-
+toc: true
+toc_label: "目录"
+---
 # 0516文件上传绕过（client-side）
 
 https://tryhackme.com/room/uploadvulns的Task 7
@@ -10,17 +13,19 @@ https://tryhackme.com/room/uploadvulns的Task 7
 
 打开网页如下：
 
-![image]({{ site.url }}{{ site.baseurl }}/assets/images/image-20220516095801615.png)
+![image]({{ site.url }}{{ site.baseurl }}/assets/images/2022-05-16-file-upload-wp/image-20220516095801615.png)
 
 
 
 因为是client-side的过滤故查看源代码，发现非png类型文件不可上传
 
-![image-20220516100025617](C:\Users\m5291\Desktop\归档系统\技术-笔记\wp\attachments\image-20220516100025617.png)
+![image-20220516100025617]({{ site.url }}{{ site.baseurl }}/assets/images/2022-05-16-file-upload-wp/image-20220516100025617.png)
+
+
 
 整个流程是用户请求网页，然后服务器返回网页信息（html等等信息），其中包含了上面用于过滤文件类型的JavaScript代码。然后点击“select file”打开文件后，过滤代码就在用户端运行。点击上传，文件就传输到服务器。
 
-![image-20220516102207195](C:\Users\m5291\Desktop\归档系统\技术-笔记\wp\attachments\image-20220516102207195.png)
+![image-20220516102207195]({{ site.url }}{{ site.baseurl }}/assets/images/2022-05-16-file-upload-wp/image-20220516102207195.png)
 
 所以我们可以用两种方法来打破client-side过滤的机制：
 
@@ -45,11 +50,11 @@ https://tryhackme.com/room/uploadvulns的Task 7
 
 打开网页代理，打开burpsuite，选择response to this request来显示服务器返回的包（默认情况下不显示）。
 
-![image-20220516105740620](C:\Users\m5291\Desktop\归档系统\技术-笔记\wp\attachments\image-20220516105740620.png)
+![image-20220516105740620]({{ site.url }}{{ site.baseurl }}/assets/images/2022-05-16-file-upload-wp/image-20220516105740620.png)
 
 点击forward，收到返回的包，删除过滤的js代码
 
-![image-20220516110033263](C:\Users\m5291\Desktop\归档系统\技术-笔记\wp\attachments\image-20220516110033263.png)
+![image-20220516105947436]({{ site.url }}{{ site.baseurl }}/assets/images/2022-05-16-file-upload-wp/image-20220516105947436.png)
 
 点击forward后，正常上传文件即可
 
@@ -71,9 +76,11 @@ http://java.uploadvulns.thm/images/webshell.php?cmd=cat /var/www/flag.txt
 
 把php-reverse-shell.php改成shell.png(改成shell只是懒得打，但是后缀一定要改)
 
-![image-20220516110903950](C:\Users\m5291\Desktop\归档系统\技术-笔记\wp\attachments\image-20220516110903950.png)
+![image-20220516110903950]({{ site.url }}{{ site.baseurl }}/assets/images/2022-05-16-file-upload-wp/image-20220516110903950.png)
 
-点击“upload”，修改文件类型，点击forward成功上传![image-20220516111059415](C:\Users\m5291\Desktop\归档系统\技术-笔记\wp\attachments\image-20220516111059415.png)
+点击“upload”，修改文件类型，点击forward成功上传
+
+![image-20220516111059415]({{ site.url }}{{ site.baseurl }}/assets/images/2022-05-16-file-upload-wp/image-20220516111059415.png)
 
 也是一样的用gobuster找到文件上传到何处
 
@@ -85,7 +92,7 @@ nc -lvnp 1234(端口号)
 
 获得reverse shell，得到flag
 
-![image-20220516111412502](C:\Users\m5291\Desktop\归档系统\技术-笔记\wp\attachments\image-20220516111412502.png)
+![image-20220516111412502]({{ site.url }}{{ site.baseurl }}/assets/images/2022-05-16-file-upload-wp/image-20220516111412502.png)
 
 
 
@@ -95,7 +102,7 @@ https://tryhackme.com/room/uploadvulns的Task 8
 
 后缀改成php5就可以上传了，以下是一些很少使用但服务器或许可以识别的Php后缀名，一个个试出来的：.php3, .php4, .php5, .php7, .phps, .php-s,  .pht .phar。
 
-![image-20220516152831391](C:\Users\m5291\Desktop\归档系统\技术-笔记\wp\attachments\image-20220516152831391.png)
+![image-20220516152831391]({{ site.url }}{{ site.baseurl }}/assets/images/2022-05-16-file-upload-wp/image-20220516152831391.png)
 
 # 0516文件上传绕过（server-side）-magic numbers过滤
 
