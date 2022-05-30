@@ -3,7 +3,7 @@ author: lemonxym
 title: Tryhackme "Pickle Rick" challenge
 ---
 
-{{ site.url }}{{ site.baseurl }}/
+
 
 昨天周日，忙着比赛没有学习。这个挑战仍然是没有完全独立完成的，看了别人的WP说这可能是Tryhackme最简单的挑战...嗯，加油吧。
 
